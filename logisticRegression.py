@@ -59,9 +59,9 @@ plt.show()
 x1 = np.linspace(min(X_standardized[:, 0]), max(X_standardized[:, 0]), 100)
 x2 = -(theta[0] + theta[1]*x1) / theta[2]
 
-# Plot the data as scatter plots and decision boundary
+# Plot the data as line plots with decision boundary
 for i in np.unique(y):
-    plt.scatter(X_standardized[y == i, 0], X_standardized[y == i, 1], label=f'Class {int(i)}')
+    plt.plot(X_standardized[y == i, 0], X_standardized[y == i, 1], label=f'Class {int(i)}', marker='o')
 
 plt.plot(x1, x2, label='Decision Boundary', color='black')
 plt.xlabel('Feature 1')
@@ -69,7 +69,6 @@ plt.ylabel('Feature 2')
 plt.legend()
 plt.title('Dataset with Decision Boundary')
 plt.show()
-
 
 # Step 6: Train Models with Different Learning Rates
 learning_rates = [0.1, 5]
